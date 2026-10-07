@@ -6,39 +6,107 @@
 <title>Pavan Srujan | Portfolio Blog</title>
 <meta name="description" content="Portfolio blog of Pavan Srujan, 3rd Semester B.Tech CSIT student at REVA University. Projects, coding practice, skills and contact.">
 <style>
+  :root{
+    --bg:#070b14; --bg2:#0b1220; --card:rgba(255,255,255,.04); --card-border:rgba(148,163,184,.16);
+    --text:#e2e8f0; --muted:#94a3b8; --cyan:#22d3ee; --violet:#a78bfa; --pink:#f472b6;
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#111827;background:#f3f6fb;line-height:1.65}
-  a{color:#1d4ed8}
-  header{background:linear-gradient(135deg,#1e3a8a,#0ea5e9);color:#fff;padding:1.25rem 1rem 3.25rem}
-  nav{max-width:920px;margin:0 auto 2.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-  nav strong{font-size:1.1rem;letter-spacing:.01em}
-  nav .links a{color:#fff;text-decoration:none;margin-left:1.1rem;font-weight:600;font-size:.95rem}
-  nav .links a:hover{text-decoration:underline}
-  .hero{max-width:920px;margin:0 auto;text-align:center;padding:0 .5rem}
-  .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:.6rem}
-  .hero p.tagline{font-size:1.05rem;opacity:.95;max-width:640px;margin:0 auto}
-  .btn{display:inline-block;background:#fff;color:#1e3a8a;padding:.55rem 1.15rem;border-radius:999px;margin:.9rem .25rem 0;text-decoration:none;font-weight:700;font-size:.95rem}
-  .btn:hover{background:#e0f2fe}
-  main{max-width:920px;margin:-1.75rem auto 2rem;padding:0 1rem}
-  section{background:#fff;border-radius:14px;padding:1.5rem 1.6rem;margin-bottom:1.1rem;box-shadow:0 2px 12px rgba(15,23,42,.07)}
-  h2{font-size:1.45rem;color:#1e3a8a;margin-bottom:.7rem}
-  .card{border:1px solid #e5e7eb;border-radius:12px;padding:1rem 1.15rem;margin:.8rem 0}
-  .card h3{font-size:1.08rem;margin-bottom:.3rem}
-  .card p{color:#374151}
-  .card a{font-weight:600}
-  .skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
-  .skill{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;padding:.35rem .8rem;border-radius:999px;font-size:.9rem;font-weight:600}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);line-height:1.65;
+    background:
+      radial-gradient(900px 500px at 15% -5%, rgba(34,211,238,.14), transparent 60%),
+      radial-gradient(800px 500px at 90% 0%, rgba(167,139,250,.14), transparent 60%),
+      radial-gradient(700px 600px at 50% 110%, rgba(244,114,182,.08), transparent 60%),
+      linear-gradient(180deg,var(--bg),var(--bg2));
+    min-height:100vh;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;
+    background-image:linear-gradient(rgba(148,163,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.06) 1px,transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 30%,transparent 75%);
+  }
+  a{color:var(--cyan)}
+  .wrap{max-width:940px;margin:0 auto;padding:0 1.1rem;position:relative}
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:14px;z-index:10;margin-top:14px;
+    display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+    background:rgba(10,15,28,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border:1px solid var(--card-border);border-radius:999px;padding:.55rem 1.1rem;
+  }
+  .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.01em;color:var(--text);text-decoration:none}
+  .avatar{
+    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:900;color:#06121f;
+    background:linear-gradient(135deg,var(--cyan),var(--violet),var(--pink));
+  }
+  nav .links a{color:var(--muted);text-decoration:none;margin-left:1.05rem;font-weight:600;font-size:.93rem}
+  nav .links a:hover{color:#fff}
+  /* ---------- Hero ---------- */
+  .hero{text-align:center;padding:4.2rem .5rem 3.4rem}
+  .badge{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);
+    border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.08);padding:.35rem .9rem;border-radius:999px;margin-bottom:1.2rem;
+  }
+  .hero h1{font-size:clamp(2.5rem,7vw,4.2rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:1rem}
+  .grad{background:linear-gradient(92deg,var(--cyan),var(--violet) 55%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.tagline{color:var(--muted);font-size:1.06rem;max-width:640px;margin:0 auto}
+  .btn{
+    display:inline-block;padding:.65rem 1.4rem;border-radius:999px;margin:1.6rem .3rem 0;text-decoration:none;font-weight:700;font-size:.95rem;
+    color:#06121f;background:linear-gradient(92deg,var(--cyan),var(--violet));
+    box-shadow:0 8px 30px rgba(34,211,238,.25);
+  }
+  .btn:hover{filter:brightness(1.1)}
+  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--card-border);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+  /* ---------- Sections ---------- */
+  main{position:relative;padding-bottom:1rem}
+  section{
+    background:var(--card);border:1px solid var(--card-border);border-radius:20px;
+    padding:1.7rem 1.8rem;margin-bottom:1.15rem;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  }
+  h2{font-size:1.5rem;margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem;color:#fff}
+  h2::before{content:"";width:9px;height:26px;border-radius:99px;background:linear-gradient(180deg,var(--cyan),var(--violet))}
+  section p{color:#cbd5e1}
+  .card{
+    border:1px solid var(--card-border);border-radius:16px;padding:1.15rem 1.25rem;margin:.85rem 0;
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(34,211,238,.45);box-shadow:0 14px 34px rgba(2,8,23,.5),0 0 0 1px rgba(34,211,238,.12)}
+  .card h3{font-size:1.1rem;margin-bottom:.3rem;color:#fff}
+  .card p{color:var(--muted)}
+  .card a{font-weight:700;text-decoration:none}
+  .card a:hover{text-decoration:underline}
+  .tag{
+    display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--violet);border:1px solid rgba(167,139,250,.35);background:rgba(167,139,250,.09);
+    padding:.18rem .6rem;border-radius:999px;margin-bottom:.5rem;
+  }
+  .skills{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.5rem}
+  .skill{
+    background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.22);color:#bae6fd;
+    padding:.38rem .85rem;border-radius:999px;font-size:.9rem;font-weight:600;transition:all .2s ease;
+  }
+  .skill:hover{background:rgba(167,139,250,.14);border-color:rgba(167,139,250,.5);color:#e9d5ff;transform:translateY(-2px)}
   ul.contact{list-style:none}
-  ul.contact li{padding:.35rem 0;border-bottom:1px solid #f1f5f9}
+  ul.contact li{padding:.55rem 0;border-bottom:1px solid rgba(148,163,184,.12);color:var(--muted)}
   ul.contact li:last-child{border-bottom:none}
-  footer{text-align:center;color:#64748b;padding:.5rem 1rem 2rem;font-size:.9rem}
-  @media(max-width:560px){nav .links a{margin-left:.7rem}section{padding:1.2rem 1.1rem}}
+  ul.contact a{font-weight:600;text-decoration:none}
+  ul.contact a:hover{text-decoration:underline}
+  footer{text-align:center;color:#64748b;padding:.5rem 1rem 2.4rem;font-size:.9rem}
+  @media(max-width:560px){
+    nav{border-radius:20px} nav .links a{margin-left:.75rem}
+    .hero{padding-top:3rem} section{padding:1.3rem 1.15rem}
+  }
 </style>
 </head>
 <body>
-<header>
+<div class="wrap">
+
   <nav>
-    <strong>Pavan Srujan</strong>
+    <a class="brand" href="#top"><span class="avatar">PS</span> Pavan Srujan</a>
     <span class="links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -46,81 +114,87 @@
       <a href="#contact">Contact</a>
     </span>
   </nav>
-  <div class="hero">
-    <h1>Hi, I'm Pavan Srujan</h1>
+
+  <header class="hero" id="top">
+    <span class="badge">Portfolio Blog · Activity 12</span>
+    <h1>Hi, I'm <span class="grad">Pavan Srujan</span></h1>
     <p class="tagline">3rd Semester B.Tech CSIT student at REVA University, learning C, C++, Python and web development by building and sharing real projects.</p>
     <p>
       <a class="btn" href="#projects">See my projects</a>
-      <a class="btn" href="https://github.com/pavansrujan8901-alt">GitHub profile</a>
+      <a class="btn ghost" href="https://github.com/pavansrujan8901-alt">GitHub profile</a>
     </p>
-  </div>
-</header>
+  </header>
 
-<main>
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am Pavan Srujan, a 3rd Semester B.Tech CSIT student at REVA University and a 2nd-year engineering student who learns best by building. I am currently focused on programming in C, C++ and Python, the basics of web development, and computer networks. This portfolio blog brings together the work from my Portfolio Building course Activities 1 to 4, along with the projects I continue to practice on GitHub.</p>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am Pavan Srujan, a 3rd Semester B.Tech CSIT student at REVA University and a 2nd-year engineering student who learns best by building. I am currently focused on programming in C, C++ and Python, the basics of web development, and computer networks. This portfolio blog brings together the work from my Portfolio Building course Activities 1 to 4, along with the projects I continue to practice on GitHub.</p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
+    <section id="projects">
+      <h2>Projects</h2>
 
-    <div class="card">
-      <h3>Hello World — My First GitHub Repository (Activities 1–3)</h3>
-      <p>My first C program (<em>hello.c</em>) written in VS Code, compiled with GCC, and pushed to GitHub using Git. This repository also holds my Activity 2 program (<em>ACT2.c</em>) and the pair-programming practice I did with GitLens and Live Share.</p>
-      <p><a href="https://github.com/pavansrujan8901-alt/portpholio-building-">View the Hello World repository on GitHub</a></p>
-    </div>
+      <div class="card">
+        <span class="tag">Activities 1–3</span>
+        <h3>Hello World — My First GitHub Repository</h3>
+        <p>My first C program (<em>hello.c</em>) written in VS Code, compiled with GCC, and pushed to GitHub using Git. This repository also holds my Activity 2 program (<em>ACT2.c</em>) and the pair-programming practice I did with GitLens and Live Share.</p>
+        <p><a href="https://github.com/pavansrujan8901-alt/portpholio-building-">View the Hello World repository on GitHub</a></p>
+      </div>
 
-    <div class="card">
-      <h3>LeetCode Practice Repository (Activity 4)</h3>
-      <p>My LeetCode solutions repository with C programs such as Best Time to Buy and Sell Stock and Binary Search, each saved with its output screenshot so my progress stays documented.</p>
-      <p><a href="https://github.com/pavansrujan8901-alt/leet-code">View the LeetCode solutions repository on GitHub</a></p>
-    </div>
+      <div class="card">
+        <span class="tag">Activity 4</span>
+        <h3>LeetCode Practice Repository</h3>
+        <p>My LeetCode solutions repository with C programs such as Best Time to Buy and Sell Stock and Binary Search, each saved with its output screenshot so my progress stays documented.</p>
+        <p><a href="https://github.com/pavansrujan8901-alt/leet-code">View the LeetCode solutions repository on GitHub</a></p>
+      </div>
 
-    <div class="card">
-      <h3>HackerRank Practice Repository</h3>
-      <p>My HackerRank practice in C++, including Compare the Triplets and Diagonal Difference, which I use alongside LeetCode to strengthen problem-solving and logic.</p>
-      <p><a href="https://github.com/pavansrujan8901-alt/hacakarank">View the HackerRank repository on GitHub</a></p>
-    </div>
+      <div class="card">
+        <span class="tag">Practice</span>
+        <h3>HackerRank Practice Repository</h3>
+        <p>My HackerRank practice in C++, including Compare the Triplets and Diagonal Difference, which I use alongside LeetCode to strengthen problem-solving and logic.</p>
+        <p><a href="https://github.com/pavansrujan8901-alt/hacakarank">View the HackerRank repository on GitHub</a></p>
+      </div>
 
-    <div class="card">
-      <h3>Enterprise Network Design and Simulation</h3>
-      <p>My current networking project in Cisco Packet Tracer: a hierarchical enterprise network with six VLANs, inter-VLAN routing, OSPF, DHCP, NAT/PAT and ACL security for the Finance department.</p>
-      <p><a href="https://github.com/pavansrujan8901-alt/personal-blog">See the project write-up in my personal blog repository</a></p>
-    </div>
-  </section>
+      <div class="card">
+        <span class="tag">Current Project</span>
+        <h3>Enterprise Network Design and Simulation</h3>
+        <p>My current networking project in Cisco Packet Tracer: a hierarchical enterprise network with six VLANs, inter-VLAN routing, OSPF, DHCP, NAT/PAT and ACL security for the Finance department.</p>
+        <p><a href="https://github.com/pavansrujan8901-alt/personal-blog">See the project write-up in my personal blog repository</a></p>
+      </div>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill">C</span>
-      <span class="skill">C++</span>
-      <span class="skill">Python</span>
-      <span class="skill">HTML &amp; CSS</span>
-      <span class="skill">Web Development Basics</span>
-      <span class="skill">Git &amp; GitHub</span>
-      <span class="skill">VS Code</span>
-      <span class="skill">GitLens &amp; Live Share</span>
-      <span class="skill">Problem Solving (LeetCode &amp; HackerRank)</span>
-      <span class="skill">Computer Networks</span>
-      <span class="skill">Cisco Packet Tracer</span>
-    </div>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">C</span>
+        <span class="skill">C++</span>
+        <span class="skill">Python</span>
+        <span class="skill">HTML &amp; CSS</span>
+        <span class="skill">Web Development Basics</span>
+        <span class="skill">Git &amp; GitHub</span>
+        <span class="skill">VS Code</span>
+        <span class="skill">GitLens &amp; Live Share</span>
+        <span class="skill">Problem Solving (LeetCode &amp; HackerRank)</span>
+        <span class="skill">Computer Networks</span>
+        <span class="skill">Cisco Packet Tracer</span>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <ul class="contact">
-      <li>GitHub: <a href="https://github.com/pavansrujan8901-alt">github.com/pavansrujan8901-alt</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/pavan-srujan/">linkedin.com/in/pavan-srujan</a></li>
-      <li>Instagram: <a href="https://www.instagram.com/pavan_srujan17">instagram.com/pavan_srujan17</a></li>
-      <li>LeetCode practice: <a href="https://github.com/pavansrujan8901-alt/leet-code">github.com/pavansrujan8901-alt/leet-code</a></li>
-      <li>HackerRank practice: <a href="https://github.com/pavansrujan8901-alt/hacakarank">github.com/pavansrujan8901-alt/hacakarank</a></li>
-    </ul>
-  </section>
-</main>
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li>GitHub: <a href="https://github.com/pavansrujan8901-alt">github.com/pavansrujan8901-alt</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/pavan-srujan/">linkedin.com/in/pavan-srujan</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/pavan_srujan17">instagram.com/pavan_srujan17</a></li>
+        <li>LeetCode practice: <a href="https://github.com/pavansrujan8901-alt/leet-code">github.com/pavansrujan8901-alt/leet-code</a></li>
+        <li>HackerRank practice: <a href="https://github.com/pavansrujan8901-alt/hacakarank">github.com/pavansrujan8901-alt/hacakarank</a></li>
+      </ul>
+    </section>
+  </main>
 
-<footer>
-  <p>&copy; 2026 Pavan Srujan &middot; Portfolio Blog &middot; Activity 12, Portfolio Building</p>
-</footer>
+  <footer>
+    <p>&copy; 2026 Pavan Srujan &middot; Portfolio Blog &middot; Activity 12, Portfolio Building</p>
+  </footer>
+</div>
 </body>
 </html>
