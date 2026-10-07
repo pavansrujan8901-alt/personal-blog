@@ -3,66 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pavan Srujan | Personal Blog & Portfolio</title>
-<link rel="stylesheet" href="style.css">
+<title>Pavan Srujan | Portfolio Blog</title>
+<meta name="description" content="Portfolio blog of Pavan Srujan, 3rd Semester B.Tech CSIT student at REVA University. Projects, coding practice, skills and contact.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#111827;background:#f3f6fb;line-height:1.65}
+  a{color:#1d4ed8}
+  header{background:linear-gradient(135deg,#1e3a8a,#0ea5e9);color:#fff;padding:1.25rem 1rem 3.25rem}
+  nav{max-width:920px;margin:0 auto 2.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  nav strong{font-size:1.1rem;letter-spacing:.01em}
+  nav .links a{color:#fff;text-decoration:none;margin-left:1.1rem;font-weight:600;font-size:.95rem}
+  nav .links a:hover{text-decoration:underline}
+  .hero{max-width:920px;margin:0 auto;text-align:center;padding:0 .5rem}
+  .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:.6rem}
+  .hero p.tagline{font-size:1.05rem;opacity:.95;max-width:640px;margin:0 auto}
+  .btn{display:inline-block;background:#fff;color:#1e3a8a;padding:.55rem 1.15rem;border-radius:999px;margin:.9rem .25rem 0;text-decoration:none;font-weight:700;font-size:.95rem}
+  .btn:hover{background:#e0f2fe}
+  main{max-width:920px;margin:-1.75rem auto 2rem;padding:0 1rem}
+  section{background:#fff;border-radius:14px;padding:1.5rem 1.6rem;margin-bottom:1.1rem;box-shadow:0 2px 12px rgba(15,23,42,.07)}
+  h2{font-size:1.45rem;color:#1e3a8a;margin-bottom:.7rem}
+  .card{border:1px solid #e5e7eb;border-radius:12px;padding:1rem 1.15rem;margin:.8rem 0}
+  .card h3{font-size:1.08rem;margin-bottom:.3rem}
+  .card p{color:#374151}
+  .card a{font-weight:600}
+  .skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+  .skill{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;padding:.35rem .8rem;border-radius:999px;font-size:.9rem;font-weight:600}
+  ul.contact{list-style:none}
+  ul.contact li{padding:.35rem 0;border-bottom:1px solid #f1f5f9}
+  ul.contact li:last-child{border-bottom:none}
+  footer{text-align:center;color:#64748b;padding:.5rem 1rem 2rem;font-size:.9rem}
+  @media(max-width:560px){nav .links a{margin-left:.7rem}section{padding:1.2rem 1.1rem}}
+</style>
 </head>
 <body>
 <header>
   <nav>
     <strong>Pavan Srujan</strong>
-    <span>
-      <a href="#about">About</a> <a href="#projects">Projects</a>
-      <a href="#blog">Blog</a> <a href="#skills">Skills</a> <a href="#contact">Contact</a>
+    <span class="links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </span>
   </nav>
-  <h1>Hi, I'm Pavan Srujan 👋</h1>
-  <p>🎓 2nd Year CSIT Student | 💻 Learning C, C++, Python &amp; Web Development | 🚀 Building Projects &amp; Growing Every Day</p>
-  <p>
-    <a class="btn" href="https://github.com/pavansrujan8901-alt">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/pavan-srujan/">LinkedIn</a>
-    <a class="btn" href="#blog">Read My Blog</a>
-  </p>
+  <div class="hero">
+    <h1>Hi, I'm Pavan Srujan</h1>
+    <p class="tagline">3rd Semester B.Tech CSIT student at REVA University, learning C, C++, Python and web development by building and sharing real projects.</p>
+    <p>
+      <a class="btn" href="#projects">See my projects</a>
+      <a class="btn" href="https://github.com/pavansrujan8901-alt">GitHub profile</a>
+    </p>
+  </div>
 </header>
 
 <main>
-<section id="about"><h2>About Me</h2>
-<p>I am a 2nd Year B.Tech CSIT student who loves building projects and learning by doing. My interests are programming in C, C++ and Python, web development, and computer networks. This blog is where I document what I build and learn.</p>
-</section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am Pavan Srujan, a 3rd Semester B.Tech CSIT student at REVA University and a 2nd-year engineering student who learns best by building. I am currently focused on programming in C, C++ and Python, the basics of web development, and computer networks. This portfolio blog brings together the work from my Portfolio Building course Activities 1 to 4, along with the projects I continue to practice on GitHub.</p>
+  </section>
 
-<section id="projects"><h2>Projects</h2>
-<div class="card"><h3>10. Enterprise Network Design and Simulation</h3>
-<p>Designed a hierarchical enterprise network in Cisco Packet Tracer: ISP → Edge Router (2911) → Core L3 Switch (3560) → Access Switches (2960). Implemented VLANs (HR, Finance, IT, Sales, Servers, Management), Inter-VLAN routing, OSPF, DHCP, DNS/Web servers, NAT/PAT and ACL security for the Finance department.</p></div>
-<div class="card"><h3>2D Graphics Editor in C</h3>
-<p>A simple 2D graphics editor built in C using a 2D character array as a virtual drawing canvas to draw and manipulate shapes. My first entry in my engineering portfolio.</p>
-<p><a href="https://github.com/pavansrujan8901-alt">View on GitHub</a></p></div>
-<div class="card"><h3>Problem Solving — LeetCode &amp; HackerRank</h3>
-<p>Practising data structures and programming problems regularly to improve logic and coding speed.</p>
-<p><a href="https://github.com/pavansrujan8901-alt/leet-code.git">LeetCode Repo</a> · <a href="https://github.com/pavansrujan8901-alt/hacakarank.git">HackerRank Repo</a></p></div>
-</section>
+  <section id="projects">
+    <h2>Projects</h2>
 
-<section id="blog"><h2>Blog</h2>
-<article class="card"><h3>How I Designed an Enterprise Network in Cisco Packet Tracer</h3><small>Oct 2026 · Networking</small>
-<p>For my networking project I built a full enterprise network with 6 VLANs. The biggest lesson: plan your IP addressing first (192.168.10.0/24 to 192.168.60.0/24), then configure trunks, SVIs and DHCP in order. ACLs taught me how real companies protect sensitive departments like Finance — IT can access Finance, but Sales cannot. Simulation mode in Packet Tracer made packet flow finally click for me.</p></article>
-<article class="card"><h3>What Building a 2D Graphics Editor in C Taught Me</h3><small>2026 · C Programming</small>
-<p>Using a 2D character array as a canvas sounds simple, but it taught me arrays, functions and clean program structure better than any textbook problem. Every shape is just mathematics placed carefully on a grid.</p></article>
-<article class="card"><h3>My LeetCode &amp; HackerRank Journey So Far</h3><small>2026 · Problem Solving</small>
-<p>I am practising problems regularly in C, C++ and Python. My goal is consistency — a few problems every week, understanding the logic fully instead of copying solutions. This blog will track my progress.</p></article>
-</section>
+    <div class="card">
+      <h3>Hello World — My First GitHub Repository (Activities 1–3)</h3>
+      <p>My first C program (<em>hello.c</em>) written in VS Code, compiled with GCC, and pushed to GitHub using Git. This repository also holds my Activity 2 program (<em>ACT2.c</em>) and the pair-programming practice I did with GitLens and Live Share.</p>
+      <p><a href="https://github.com/pavansrujan8901-alt/portpholio-building-">View the Hello World repository on GitHub</a></p>
+    </div>
 
-<section id="skills"><h2>Skills</h2>
-<p>C · C++ · Python · HTML/CSS · Web Development Basics · Computer Networks (VLAN, OSPF, DHCP, NAT, ACL) · Cisco Packet Tracer · Git &amp; GitHub</p>
-</section>
+    <div class="card">
+      <h3>LeetCode Practice Repository (Activity 4)</h3>
+      <p>My LeetCode solutions repository with C programs such as Best Time to Buy and Sell Stock and Binary Search, each saved with its output screenshot so my progress stays documented.</p>
+      <p><a href="https://github.com/pavansrujan8901-alt/leet-code">View the LeetCode solutions repository on GitHub</a></p>
+    </div>
 
-<section id="contact"><h2>Connect With Me</h2>
-<ul>
-<li>GitHub: <a href="https://github.com/pavansrujan8901-alt">github.com/pavansrujan8901-alt</a></li>
-<li>LinkedIn: <a href="https://www.linkedin.com/in/pavan-srujan/">linkedin.com/in/pavan-srujan</a></li>
-<li>Instagram: <a href="https://www.instagram.com/pavan_srujan17">instagram.com/pavan_srujan17</a></li>
-<li>LeetCode: <a href="https://github.com/pavansrujan8901-alt/leet-code.git">LeetCode practice repo</a></li>
-<li>HackerRank: <a href="https://github.com/pavansrujan8901-alt/hacakarank.git">HackerRank practice repo</a></li>
-</ul>
-</section>
+    <div class="card">
+      <h3>HackerRank Practice Repository</h3>
+      <p>My HackerRank practice in C++, including Compare the Triplets and Diagonal Difference, which I use alongside LeetCode to strengthen problem-solving and logic.</p>
+      <p><a href="https://github.com/pavansrujan8901-alt/hacakarank">View the HackerRank repository on GitHub</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Enterprise Network Design and Simulation</h3>
+      <p>My current networking project in Cisco Packet Tracer: a hierarchical enterprise network with six VLANs, inter-VLAN routing, OSPF, DHCP, NAT/PAT and ACL security for the Finance department.</p>
+      <p><a href="https://github.com/pavansrujan8901-alt/personal-blog">See the project write-up in my personal blog repository</a></p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill">C</span>
+      <span class="skill">C++</span>
+      <span class="skill">Python</span>
+      <span class="skill">HTML &amp; CSS</span>
+      <span class="skill">Web Development Basics</span>
+      <span class="skill">Git &amp; GitHub</span>
+      <span class="skill">VS Code</span>
+      <span class="skill">GitLens &amp; Live Share</span>
+      <span class="skill">Problem Solving (LeetCode &amp; HackerRank)</span>
+      <span class="skill">Computer Networks</span>
+      <span class="skill">Cisco Packet Tracer</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact">
+      <li>GitHub: <a href="https://github.com/pavansrujan8901-alt">github.com/pavansrujan8901-alt</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/pavan-srujan/">linkedin.com/in/pavan-srujan</a></li>
+      <li>Instagram: <a href="https://www.instagram.com/pavan_srujan17">instagram.com/pavan_srujan17</a></li>
+      <li>LeetCode practice: <a href="https://github.com/pavansrujan8901-alt/leet-code">github.com/pavansrujan8901-alt/leet-code</a></li>
+      <li>HackerRank practice: <a href="https://github.com/pavansrujan8901-alt/hacakarank">github.com/pavansrujan8901-alt/hacakarank</a></li>
+    </ul>
+  </section>
 </main>
-<footer><p>© 2026 Pavan Srujan · Personal Blog — Portfolio Item 6</p></footer>
+
+<footer>
+  <p>&copy; 2026 Pavan Srujan &middot; Portfolio Blog &middot; Activity 12, Portfolio Building</p>
+</footer>
 </body>
 </html>
